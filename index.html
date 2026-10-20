@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f5f5f7">
+  <title>LiveContainer Source Viewer</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="shell">
+    <section id="home-screen" class="screen" aria-labelledby="home-title">
+      <header class="brand"><img class="brand-logo" src="assets/logo.webp" alt=""><span>Source Viewer</span></header>
+      <div class="intro">
+        <p class="eyebrow">SOURCE VIEWER</p>
+        <h1 id="home-title">Browse a repository</h1>
+        <p class="description">Enter the URL of a compatible repository to browse and install its apps.</p>
+        <form id="repo-form" class="repo-form">
+          <label for="repo-url">Repository URL</label>
+          <div class="input-row">
+            <input id="repo-url" name="repo" type="url" placeholder="https://example.com/repo.json" autocomplete="url" required>
+            <button class="primary-button" type="submit">Open</button>
+          </div>
+          <p class="hint">You can also open a repository directly with <code>?source=https://example.com/repo.json</code>.</p>
+          <p id="home-error" class="error" role="alert" hidden></p>
+        </form>
+      </div>
+      <footer>Compatible with AltStore repository format.</footer>
+    </section>
+
+    <section id="repo-screen" class="screen" aria-label="Repository apps" hidden>
+      <header class="repo-topbar">
+        <a class="back-link" id="back-link" href="./" aria-label="Back">←</a>
+        <div class="brand compact"><img class="brand-logo" src="assets/logo.webp" alt=""><span>Source Viewer</span></div>
+      </header>
+      <div class="repo-heading">
+        <img id="repo-icon" class="repo-icon" alt="" hidden>
+        <div class="repo-title-wrap">
+          <p class="eyebrow">REPOSITORY</p>
+          <h1 id="repo-name">Loading…</h1>
+        </div>
+      </div>
+      <div class="toolbar">
+        <label class="search-box"><span aria-hidden="true">⌕</span><input id="app-search" type="search" placeholder="Search apps" aria-label="Search apps"></label>
+        <span id="app-count" class="app-count"></span>
+      </div>
+      <p id="repo-error" class="error" role="alert" hidden></p>
+      <p id="empty-state" class="empty-state" hidden>No apps found.</p>
+      <div id="apps" class="app-list" aria-live="polite"></div>
+      <section id="about-section" class="about-section" aria-labelledby="about-title" hidden>
+        <h2 id="about-title">About</h2>
+        <dl class="about-list">
+          <div id="about-subtitle-row" hidden><dt>Subtitle</dt><dd id="about-subtitle"></dd></div>
+          <div id="about-description-row" hidden><dt>Description</dt><dd id="about-description"></dd></div>
+          <div id="about-author-row" hidden><dt>Author</dt><dd><a id="about-author"></a></dd></div>
+        </dl>
+      </section>
+      <footer></footer>
+    </section>
+  </main>
+  <script src="app.js" defer></script>
+</body>
+</html>
