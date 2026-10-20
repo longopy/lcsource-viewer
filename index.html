@@ -32,18 +32,24 @@
       <header class="repo-topbar">
         <a class="brand compact" href="index.html#repo-url" aria-label="Source Viewer home"><img class="brand-logo" src="assets/logo.webp" alt=""><span>Source Viewer</span></a>
       </header>
-      <header class="repo-heading">
+      <header id="repo-heading" class="repo-heading">
         <img id="repo-icon" class="repo-icon" alt="" hidden>
         <div class="repo-title-wrap">
           <p class="eyebrow">REPOSITORY</p>
           <h1 id="repo-name">Loading…</h1>
         </div>
+        <a id="livecontainer-link" class="livecontainer-button" href="https://altdirect.app/?r=livecontainer" aria-label="Add repository to LiveContainer" hidden>Add to LiveContainer</a>
       </header>
-      <div class="toolbar">
+      <div id="repo-toolbar" class="toolbar" hidden>
         <label class="search-box"><span aria-hidden="true">⌕</span><input id="app-search" type="search" placeholder="Search apps" aria-label="Search apps"></label>
         <span id="app-count" class="app-count"></span>
       </div>
-      <p id="repo-error" class="error" role="alert" hidden></p>
+      <section id="repo-error-state" class="error-state" aria-labelledby="repo-error-title" hidden>
+        <span class="error-symbol" aria-hidden="true">!</span>
+        <h1 id="repo-error-title">Unable to load repository</h1>
+        <p id="repo-error" class="error" role="alert"></p>
+        <a id="repo-retry" class="error-action" href="index.html#repo-url">Choose another repository</a>
+      </section>
       <p id="empty-state" class="empty-state" hidden>No apps found.</p>
       <section id="apps" class="app-list" aria-label="Apps" aria-live="polite"></section>
       <section id="about-section" class="about-section" aria-labelledby="about-title" hidden>

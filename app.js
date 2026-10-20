@@ -54,11 +54,17 @@ async function loadRepo(value) {
   try {
     const url = repoUrl(value);
     repoBaseUrl = url;
+    const livecontainerUrl = new URL("https://altdirect.app/");
+    livecontainerUrl.searchParams.set("url", url);
+    livecontainerUrl.searchParams.set("r", "livecontainer");
+    document.querySelector("#livecontainer-link").href = livecontainerUrl.href;
     const response = await fetch(url);
     if (!response.ok) throw new Error(`The server responded with ${response.status}.`);
     const repo = await response.json();
     if (!repo || !Array.isArray(repo.apps)) throw new Error("The JSON does not contain a valid apps list.");
 
+    document.querySelector("#livecontainer-link").hidden = false;
+    document.querySelector("#repo-toolbar").hidden = false;
     document.title = `${repo.name || "Repository"} · LiveContainer Source Viewer`;
     document.querySelector("#repo-name").textContent = repo.name || "Repository";
     const tint = safeColor(repo.tintColor);
@@ -72,7 +78,14 @@ async function loadRepo(value) {
     allApps = repo.apps;
     renderApps();
   } catch (error) {
-    showError(repoError, `Could not load repository. ${error.message || "Check the URL and make sure the server allows CORS requests."}`);
+    document.querySelector("#repo-heading").hidden = true;
+    document.querySelector("#livecontainer-link").hidden = true;
+    document.querySelector("#repo-toolbar").hidden = true;
+    document.querySelector("#repo-error-state").hidden = false;
+    const detail = error instanceof TypeError
+      ? "The server may be blocking browser access with CORS. It must allow https://longopy.github.io in its Access-Control-Allow-Origin response header."
+      : error.message || "Check the URL and make sure the server allows CORS requests.";
+    showError(repoError, detail);
   }
 }
 

@@ -55,7 +55,7 @@ https://longopy.github.io/lcsource-viewer/?source=https://example.com/repo.json
 
 The source URL can be provided as plain text without URL encoding. The page also accepts `repo` with an encoded URL and `repo64` with a Base64 URL for compatibility.
 
-The repository host must allow browser requests from other websites through CORS. The viewer reads repository JSON in the browser and does not upload or store it.
+The repository host must allow browser requests from other websites through CORS, for example by returning `Access-Control-Allow-Origin: https://longopy.github.io` (or `*` for a public JSON file). The viewer reads repository JSON in the browser and does not upload or store it. Repositories without CORS support need to be served through a CORS-enabled proxy.
 
 ## Add a badge to your website
 
