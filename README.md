@@ -69,7 +69,7 @@ Open `http://localhost:8000/` and enter a repository URL. A local HTTP server is
 
 ## GitHub Pages deployment
 
-The workflow in `.github/workflows/deploy-pages.yml` publishes the site when `index.html`, `style.css`, `app.js`, or `repo.json` changes on `main`. It can also be started manually from the **Actions** tab.
+The workflow in `.github/workflows/deploy-pages.yml` publishes the site when `index.html`, `style.css`, `app.js`, files in `assets/`, or the workflow changes on `main`. It can also be started manually from the **Actions** tab. The sample `repo.json` is not included in the published site.
 
 In the repository settings, choose **Settings → Pages → Build and deployment → Source → GitHub Actions**. The workflow publishes the static site to:
 
