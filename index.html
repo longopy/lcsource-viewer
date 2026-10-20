@@ -30,23 +30,22 @@
 
     <section id="repo-screen" class="screen" aria-label="Repository apps" hidden>
       <header class="repo-topbar">
-        <a class="back-link" id="back-link" href="./" aria-label="Back">←</a>
-        <div class="brand compact"><img class="brand-logo" src="assets/logo.webp" alt=""><span>Source Viewer</span></div>
+        <a class="brand compact" href="index.html#repo-url" aria-label="Source Viewer home"><img class="brand-logo" src="assets/logo.webp" alt=""><span>Source Viewer</span></a>
       </header>
-      <div class="repo-heading">
+      <header class="repo-heading">
         <img id="repo-icon" class="repo-icon" alt="" hidden>
         <div class="repo-title-wrap">
           <p class="eyebrow">REPOSITORY</p>
           <h1 id="repo-name">Loading…</h1>
         </div>
-      </div>
+      </header>
       <div class="toolbar">
         <label class="search-box"><span aria-hidden="true">⌕</span><input id="app-search" type="search" placeholder="Search apps" aria-label="Search apps"></label>
         <span id="app-count" class="app-count"></span>
       </div>
       <p id="repo-error" class="error" role="alert" hidden></p>
       <p id="empty-state" class="empty-state" hidden>No apps found.</p>
-      <div id="apps" class="app-list" aria-live="polite"></div>
+      <section id="apps" class="app-list" aria-label="Apps" aria-live="polite"></section>
       <section id="about-section" class="about-section" aria-labelledby="about-title" hidden>
         <h2 id="about-title">About</h2>
         <dl class="about-list">
@@ -55,7 +54,6 @@
           <div id="about-author-row" hidden><dt>Author</dt><dd><a id="about-author"></a></dd></div>
         </dl>
       </section>
-      <footer></footer>
     </section>
   </main>
   <script src="app.js" defer></script>

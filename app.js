@@ -1,7 +1,6 @@
 const homeScreen = document.querySelector("#home-screen");
 const repoScreen = document.querySelector("#repo-screen");
 const repoForm = document.querySelector("#repo-form");
-const backLink = document.querySelector("#back-link");
 const repoInput = document.querySelector("#repo-url");
 const homeError = document.querySelector("#home-error");
 const repoError = document.querySelector("#repo-error");
@@ -46,11 +45,6 @@ repoForm.addEventListener("submit", event => {
 });
 
 searchInput.addEventListener("input", renderApps);
-
-backLink.addEventListener("click", event => {
-  event.preventDefault();
-  location.href = location.pathname;
-});
 
 if (initialRepo) loadRepo(initialRepo);
 
@@ -137,7 +131,7 @@ function renderApps() {
 
     const info = document.createElement("div");
     info.className = "app-info";
-    const name = document.createElement("p");
+    const name = document.createElement("h2");
     name.className = "app-name";
     name.textContent = app.name || "App";
     name.title = name.textContent;
