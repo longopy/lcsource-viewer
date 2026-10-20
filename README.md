@@ -57,6 +57,29 @@ The source URL can be provided as plain text without URL encoding. The page also
 
 The repository host must allow browser requests from other websites through CORS. The viewer reads repository JSON in the browser and does not upload or store it.
 
+## Add a badge to your website
+
+Add a **View in LCSource Viewer** badge to your website so visitors can open your repository directly in the viewer. Replace the example repository URL with your own URL:
+
+```html
+<a href="https://longopy.github.io/lcsource-viewer/?source=<source_url>">
+  <img
+    alt="View in LCSource Viewer"
+    src="https://raw.githubusercontent.com/longopy/lcsource-viewer/main/assets/view_in_badge.webp" width="180">
+</a>
+```
+
+For example:
+<p align="center">
+  <a href="https://longopy.github.io/lcsource-viewer/?source=https://raw.githubusercontent.com/longopy/peoples-repository/main/repo.json">
+    <img
+      alt="View in LCSource Viewer"
+      src="https://raw.githubusercontent.com/longopy/lcsource-viewer/main/assets/view_in_badge.webp", width="180">
+  </a>
+</p>
+
+The repository must be accessible from browsers and allow cross-origin requests through CORS.
+
 ## Run locally
 
 Serve the project directory with any static web server, then open its local URL. For example:
