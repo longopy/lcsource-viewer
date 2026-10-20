@@ -65,7 +65,7 @@ async function loadRepo(value) {
 
     document.querySelector("#livecontainer-link").hidden = false;
     document.querySelector("#repo-toolbar").hidden = false;
-    document.title = `${repo.name || "Repository"} · LiveContainer Source Viewer`;
+    document.title = `${repo.name || "Repository"} · LCSource Viewer`;
     document.querySelector("#repo-name").textContent = repo.name || "Repository";
     const tint = safeColor(repo.tintColor);
     document.documentElement.style.setProperty("--tint", tint);
