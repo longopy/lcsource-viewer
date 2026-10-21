@@ -6,6 +6,7 @@ const homeError = document.querySelector("#home-error");
 const repoError = document.querySelector("#repo-error");
 const appsElement = document.querySelector("#apps");
 const searchInput = document.querySelector("#app-search");
+const copyRepoButton = document.querySelector("#copy-repo-button");
 let allApps = [];
 let repoBaseUrl = location.href;
 
@@ -45,6 +46,18 @@ repoForm.addEventListener("submit", event => {
 });
 
 searchInput.addEventListener("input", renderApps);
+copyRepoButton.addEventListener("click", async () => {
+  clearTimeout(copyRepoButton.resetLabelTimer);
+  try {
+    await navigator.clipboard.writeText(repoBaseUrl);
+    copyRepoButton.textContent = "Copied!";
+  } catch {
+    copyRepoButton.textContent = "Copy failed";
+  }
+  copyRepoButton.resetLabelTimer = setTimeout(() => {
+    copyRepoButton.textContent = "Copy repository URL";
+  }, 1600);
+});
 
 if (initialRepo) loadRepo(initialRepo);
 
@@ -65,6 +78,7 @@ async function loadRepo(value) {
 
     document.querySelector("#livecontainer-link").hidden = false;
     document.querySelector("#repo-toolbar").hidden = false;
+    document.querySelector("#repo-actions").hidden = false;
     document.title = `${repo.name || "Repository"} · LCSource Viewer`;
     document.querySelector("#repo-name").textContent = repo.name || "Repository";
     const tint = safeColor(repo.tintColor);
@@ -116,7 +130,7 @@ function renderAbout(repo) {
     }
     document.querySelector("#about-author-row").hidden = false;
   }
-  section.hidden = !(subtitle || description || author);
+  section.hidden = false;
 }
 
 function renderApps() {

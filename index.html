@@ -21,6 +21,7 @@
           <div class="input-row">
             <input id="repo-url" name="repo" type="url" placeholder="https://example.com/repo.json" autocomplete="url" required>
             <button class="primary-button" type="submit">Open</button>
+            <a class="example-button" href="?source=https://raw.githubusercontent.com/longopy/peoples-repository/main/repo.json">Try example</a>
           </div>
           <p class="hint">You can also open a repository directly with <code>?source=https://example.com/repo.json</code>.</p>
           <p id="home-error" class="error" role="alert" hidden></p>
@@ -61,7 +62,12 @@
       <p id="empty-state" class="empty-state" hidden>No apps found.</p>
       <section id="apps" class="app-list" aria-label="Apps" aria-live="polite"></section>
       <section id="about-section" class="about-section" aria-labelledby="about-title" hidden>
-        <h2 id="about-title">About</h2>
+        <div class="about-heading">
+          <h2 id="about-title">About</h2>
+          <div id="repo-actions" class="repo-actions" hidden>
+            <button id="copy-repo-button" class="copy-repo-button" type="button" aria-live="polite">Copy repository URL</button>
+          </div>
+        </div>
         <dl class="about-list">
           <div id="about-subtitle-row" hidden><dt>Subtitle</dt><dd id="about-subtitle"></dd></div>
           <div id="about-description-row" hidden><dt>Description</dt><dd id="about-description"></dd></div>
