@@ -108,3 +108,7 @@ The viewer expects a JSON document with an `apps` array. It reads common AltStor
 - App: `name`, `developerName`, `version`, `minOSVersion`, `size`, `iconURL`, `tintColor`, `downloadURL`
 
 App cards use `downloadURL` for the **Download** action. When an app icon cannot load, the viewer displays a color-matched fallback.
+
+## License
+
+This project is licensed under the MIT License. See [LICENSE](LICENSE) for details.

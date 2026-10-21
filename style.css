@@ -32,8 +32,10 @@ h1 { margin: 0; font-size: clamp(29px, 8vw, 39px); letter-spacing: -.045em; line
 .hint { margin: 12px 0 0; color: var(--muted); font-size: 14px; line-height: 1.5; }
 code { font-size: .95em; }
 footer { margin-top: 30px; color: var(--muted); font-size: 13px; text-align: center; }
+footer a { color: inherit; text-underline-offset: 3px; }
 #home-screen footer { margin-top: 56px; }
 .repo-topbar { display: flex; align-items: center; justify-content: flex-start; gap: 14px; min-height: 38px; max-width: 1040px; margin: 0 auto; padding-left: 18px; }
+.project-link { margin-left: auto; color: var(--muted); font-size: 14px; text-underline-offset: 3px; }
 .compact { font-size: 15px; }
 .compact .brand-logo { width: 27px; height: 27px; flex-basis: 27px; border-radius: 8px; }
 .repo-heading { display: flex; flex-wrap: wrap; align-items: center; gap: 15px; max-width: 1040px; margin: 32px auto 25px; }

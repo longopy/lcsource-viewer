@@ -1,16 +1,6 @@
 name: Deploy lcsource-viewer
 
 on:
-  push:
-    branches:
-      - main
-    paths:
-      - app.js
-      - favicon.ico
-      - index.html
-      - style.css
-      - assets/**
-      - .github/workflows/deploy-pages.yml
   workflow_dispatch:
 
 permissions:
