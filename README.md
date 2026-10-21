@@ -1,7 +1,7 @@
 # LCSource Viewer
 
 <p align="center">
-  <img src="assets/logo.webp" alt="LCSource Viewer logo" width="120">
+  <img src="assets/logo.webp" alt="LCSource Viewer logo" width="85">
 </p>
 
 <p align="center">
