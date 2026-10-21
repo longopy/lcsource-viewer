@@ -1,4 +1,4 @@
-name: Deploy lcsource-viewer to GitHub Pages
+name: Deploy lcsource-viewer
 
 on:
   push:
